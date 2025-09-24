@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Плюшевые игрушки</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <h1>Плюшки игрушки</h1>
+    </div>
+  </header>
+  <button class="cart" id="cart">
+      <img class="cart__image" src="./images/cart.png" alt="Cart" />
+      <div class="cart__num" id="cart_num">0</div>
+  </button>
+    
+ 
+
+  <main>
+    
+    <section class="cards">
+      <div class="container container__cards">
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/cat 20.jpg" alt="cat 20">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">2000</div>
+          </div>
+          <a href="#!" class="card__title">Толстый кот 20 см</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/cat 26.jpg" alt="cat 26">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">2500</div>
+          </div>
+          <a href="#!" class="card__title">Толстый кот 26 см</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/cat 33.jpg" alt="cat 33">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">3000</div>
+          </div>
+          <a href="#!" class="card__title">Толстый кот 33 см</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/dog 15.jpg" alt="dog 15">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">1000</div>
+          </div>
+          <a href="#!" class="card__title">Собака 15 см</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/dog 30.jpg" alt="dog 30">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">3000</div>
+          </div>
+          <a href="#!" class="card__title">Собака 30 см</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+          <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/dog 40.jpg" alt="dog 40">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">3500</div>
+          </div>
+          <a href="#!" class="card__title">Собака 40 см</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/ham w.jpg" alt="hamster w">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">1000</div>
+          </div>
+          <a href="#!" class="card__title">Хомяк белый</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/ham g.jpg" alt="hamster g">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">1000</div>
+          </div>
+          <a href="#!" class="card__title">Хомяк серый</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        <div class="card">
+          <div class="card__top">
+            <a href="#!" class="card__img">
+              <img src="./images/ham b.jpg" alt="ham b">
+            </a>
+          </div>
+          <div class = "card__bottom">
+            <div class="card__prices">1000</div>
+          </div>
+          <a href="#!" class="card__title">Хомяк бежевый</a>
+          <button class="card__btn">В корзину</button>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+<div class="popup" id="popup" aria-hidden="true">
+    <button id="popup_close" aria-label="Закрыть">✖</button>
+
+    <div id="popup_container">
+      <h2 class="popup__title">Ваша корзина</h2>
+      <div id="popup_product_list" class="popup__list"></div>
+
+      <div class="popup__summary">
+        <div>Итого: <strong id="popup_cost">0 ₽</strong></div>
+        <div class="popup__actions">
+          <button id="checkout_btn" class="btn">Оформить заказ</button>
+          <button id="clear_btn" class="btn btn--muted">Очистить</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <!-- Модальное окно формы заказа -->
+<div class="modal" id="order_modal" aria-hidden="true">
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="order_title">
+    <button class="modal__close" id="order_close" aria-label="Закрыть">✖</button>
+    <h3 id="order_title">Оформление заказа</h3>
+
+    <form id="order_form" class="order_form" novalidate>
+      <label>
+        Имя
+        <input type="text" name="firstName" id="firstName" required />
+      </label>
+      <label>
+        Фамилия
+        <input type="text" name="lastName" id="lastName" required />
+      </label>
+      <label>
+        Адрес доставки
+        <input type="text" name="address" id="address" required />
+      </label>
+      <label>
+        Телефон
+        <input type="tel" name="phone" id="phone" placeholder="+7 900 000-00-00" required />
+      </label>
+
+      <div class="order_form__actions">
+        <button type="submit" class="btn">Создать заказ</button>
+        <button type="button" class="btn btn--muted" id="order_cancel">Отмена</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
